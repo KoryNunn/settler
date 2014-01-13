@@ -1,6 +1,6 @@
 {
   "name": "settler",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "settler.js",
   "scripts": {
