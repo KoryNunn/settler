@@ -1,10 +1,10 @@
 {
   "name": "settler",
   "version": "0.0.1",
-  "description": "",
+  "description": "Settle a number down to 0 over time with an overridable tween.",
   "main": "settler.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./test/test/js"
   },
   "author": "",
   "license": "BSD",
