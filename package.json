@@ -1,0 +1,14 @@
+{
+  "name": "settler",
+  "version": "0.0.0",
+  "description": "",
+  "main": "settler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD",
+  "devDependencies": {
+    "grape": "~0.1.8"
+  }
+}
