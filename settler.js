@@ -19,7 +19,7 @@ Settler.prototype._step = function(){
     this.rate = distance;
 };
 
-Settler.prototype._complete = function(){
+Settler.prototype._reset= function(){
     this.value = this.target;
     this.rate = null;
 };
@@ -30,12 +30,12 @@ Settler.prototype.settle = function(value){
     this.value = value;
 
     if(this._settleFrameId){
-        this.cancel();
+        this._reset();
     }
 
     function frame(){
         if(settler.complete()){
-            settler._complete();
+            settler._reset();
             settler.emit('settle');
             return;
         }
@@ -63,7 +63,8 @@ Settler.prototype.tween = function(distance){
 Settler.prototype.cancel = function(){
     this.emit('cancel');
     this.cancelFrame(this._settleFrameId);
-    this._complete();
+    this._settleFrameId = null;
+    this._reset();
 };
 
 Settler.prototype.cancelFrame = typeof requestAnimationFrame !== 'undefined' ? function(id){

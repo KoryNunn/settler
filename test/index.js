@@ -76,3 +76,16 @@ test('cancel settle', function(t){
     settler.settle(100);
     settler.cancel();
 });
+
+test('resettle', function(t){
+    t.plan(2);
+
+    var settler = new Settler();
+
+    settler.on('settle', function(){
+        t.pass();
+    });
+
+    settler.settle(100);
+    settler.settle(100);
+});
