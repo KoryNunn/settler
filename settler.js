@@ -19,7 +19,7 @@ Settler.prototype._step = function(){
     this.rate = distance;
 };
 
-Settler.prototype._reset= function(){
+Settler.prototype._reset = function(){
     this.value = this.target;
     this.rate = null;
 };
@@ -27,11 +27,12 @@ Settler.prototype._reset= function(){
 Settler.prototype.settle = function(value){
     var settler = this;
 
-    this.value = value;
 
     if(this._settleFrameId){
         this._reset();
     }
+
+    this.value = value || 0;
 
     function frame(){
         if(settler.complete()){
@@ -39,6 +40,8 @@ Settler.prototype.settle = function(value){
             settler.emit('settle');
             return;
         }
+    
+        settler.cancelFrame(this._settleFrameId);
 
         settler._settleFrameId = settler.nextFrame(function(){
             settler.emit('frame', settler.value);
@@ -50,6 +53,11 @@ Settler.prototype.settle = function(value){
     frame();
 
     return settler;
+};
+
+Settler.prototype.toTarget = function(target){
+    this.target = target;
+    this.settle(this.value);
 };
 
 Settler.prototype.complete = function(){
