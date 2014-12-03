@@ -1,8 +1,7 @@
-var test = require('grape'),
+var test = require('tape'),
     Settler = require('../');
 
 test('settler settles', function(t){
-    t.timeout(5000);
     t.plan(1);
 
     var settler = new Settler();
@@ -15,7 +14,6 @@ test('settler settles', function(t){
 });
 
 test('settler settles to custom target', function(t){
-    t.timeout(5000);
     t.plan(1);
 
     var settler = new Settler({
@@ -30,7 +28,6 @@ test('settler settles to custom target', function(t){
 });
 
 test('settle up', function(t){
-    t.timeout(5000);
     t.plan(1);
 
     var settler = new Settler({
@@ -45,7 +42,6 @@ test('settle up', function(t){
 });
 
 test('override tween function', function(t){
-    t.timeout(5000);
     t.plan(4);
 
     var settler = new Settler();
@@ -63,7 +59,6 @@ test('override tween function', function(t){
 });
 
 test('cancel settle', function(t){
-    t.timeout(5000);
     t.plan(1);
 
     var settler = new Settler();

@@ -4,12 +4,24 @@
   "description": "Settle a number down to 0 over time with an overridable tween.",
   "main": "settler.js",
   "scripts": {
-    "test": "node ./test/test/js",
+    "test": "node test",
     "watch": "watchify test/index.js -o test/index.browser.js"
   },
-  "author": "",
+  "author": "Kory Nunn <knunn187@gmail.com>",
   "license": "BSD",
   "devDependencies": {
-    "grape": "~0.1.8"
-  }
+    "grape": "~0.1.8",
+    "tape": "^3.0.3"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KoryNunn/settler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KoryNunn/settler/issues"
+  },
+  "homepage": "https://github.com/KoryNunn/settler"
 }
