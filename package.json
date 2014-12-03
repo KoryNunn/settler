@@ -1,6 +1,6 @@
 {
   "name": "settler",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Settle a number down to 0 over time with an overridable tween.",
   "main": "settler.js",
   "scripts": {
